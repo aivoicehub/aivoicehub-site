@@ -60,6 +60,30 @@
             background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
             background-size: 20px 20px;
         }
+
+        .service-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 255, 136, 0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.2);
+            border-color: rgba(0, 255, 136, 0.3);
+        }
+
+        .stats-banner {
+            background: linear-gradient(90deg, rgba(0, 255, 136, 0.05), rgba(0, 180, 255, 0.05), rgba(0, 255, 136, 0.05));
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.1);
+        }
+
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            border-color: rgba(0, 255, 136, 0.5);
+        }
     </style>
 </head>
 <body class="bg-grid">
@@ -120,13 +144,174 @@
         </div>
     </section>
 
+    <!-- Our Services Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold">Our <span class="gradient-text">Services</span></h2>
+            <p class="mt-4 text-gray-300 max-w-2xl mx-auto">Complete solutions to automate and grow your real estate business</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Service 1 -->
+            <div class="service-card bg-gray-900/50 border border-gray-800 rounded-2xl p-8">
+                <div class="w-14 h-14 bg-[#00FF88]/10 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-robot text-[#00FF88] text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">SAM – Smart Appointment Messenger</h3>
+                <p class="text-gray-300">Your 24/7 AI receptionist that books appointments and qualifies leads automatically.</p>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card bg-gray-900/50 border border-gray-800 rounded-2xl p-8 relative">
+                <div class="absolute top-4 right-4">
+                    <span class="bg-[#00FF88]/20 text-[#00FF88] text-xs px-2 py-1 rounded-full">Coming Soon</span>
+                </div>
+                <div class="w-14 h-14 bg-[#00FF88]/10 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-microphone-alt text-[#00FF88] text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">AVA – Autonomous Voice Assistant</h3>
+                <p class="text-gray-300">AI that answers calls, screens leads, and books appointments with human-like conversations.</p>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card bg-gray-900/50 border border-gray-800 rounded-2xl p-8">
+                <div class="w-14 h-14 bg-[#00FF88]/10 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-code text-[#00FF88] text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Website Builds</h3>
+                <p class="text-gray-300">Fast, mobile-first websites designed to convert visitors into qualified leads.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Results Banner -->
+    <section class="py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="stats-banner bg-black/50 border border-gray-800 rounded-2xl p-6 md:p-8">
+            <div class="grid md:grid-cols-2 gap-6 text-center md:text-left">
+                <div class="flex flex-col md:flex-row items-center justify-center md:justify-start space-y-2 md:space-y-0 md:space-x-4">
+                    <div class="text-3xl">📅</div>
+                    <div>
+                        <div class="text-2xl font-bold">118+</div>
+                        <div class="text-gray-300">Appointments Booked Last Month</div>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center justify-center md:justify-start space-y-2 md:space-y-0 md:space-x-4">
+                    <div class="text-3xl">⭐️</div>
+                    <div>
+                        <div class="text-2xl font-bold">4.9/5</div>
+                        <div class="text-gray-300">Avg Client Feedback Rating</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold">Simple <span class="gradient-text">Pricing</span></h2>
+            <p class="mt-4 text-gray-300 max-w-2xl mx-auto">Invest in solutions that pay for themselves</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <!-- Pricing Card 1 -->
+            <div class="pricing-card bg-gray-900/50 border border-gray-800 rounded-2xl p-8">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-xl font-bold mb-1">SAM AI Receptionist</h3>
+                        <p class="text-gray-300 text-sm">Complete setup for your business</p>
+                    </div>
+                    <div class="bg-[#00FF88]/10 text-[#00FF88] px-3 py-1 rounded-full text-sm font-medium">Most Popular</div>
+                </div>
+
+                <div class="mt-6">
+                    <div class="text-3xl font-bold">$2,999</div>
+                    <div class="text-gray-300 text-sm">one-time setup</div>
+                </div>
+
+                <div class="mt-6 space-y-3">
+                    <div class="flex items-center">
+                        <i class="fas fa-check text-[#00FF88] mr-3"></i>
+                        <span class="text-sm">24/7 instant replies</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check text-[#00FF88] mr-3"></i>
+                        <span class="text-sm">Appointment booking</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check text-[#00FF88] mr-3"></i>
+                        <span class="text-sm">Calendar integration</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check text-[#00FF88] mr-3"></i>
+                        <span class="text-sm">1 month free support</span>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-gray-800">
+                    <div class="text-sm text-gray-300">Optional ongoing support</div>
+                    <div class="text-xl font-bold mt-1">$199<span class="text-gray-300 text-sm">/month</span></div>
+                </div>
+
+                <a href="#demo" class="glow-button block text-center bg-[#00FF88] text-black px-4 py-3 rounded-full font-medium mt-6">
+                    Get Started
+                </a>
+            </div>
+
+            <!-- Pricing Card 2 -->
+            <div class="pricing-card bg-gray-900/50 border border-gray-800 rounded-2xl p-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-1">Website Build</h3>
+                    <p class="text-gray-300 text-sm">Mobile-first, high-converting site</p>
+                </div>
+
+                <div class="mt-6">
+                    <div class="text-3xl font-bold">$499</div>
+                    <div class="text-gray-300 text-sm">one-time build</div>
+                </div>
+
+                <div class="mt-6 space-y-3">
+                    <div class="flex items-center">
+                        <i class="fas fa-check text-[#00FF88] mr-3"></i>
+                        <span class="text-sm">Mobile-optimized design</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check text-[#00FF88] mr-3"></i>
+                        <span class="text-sm">Lead capture forms</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check text-[#00FF88] mr-3"></i>
+                        <span class="text-sm">SEO optimized</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check text-[#00FF88] mr-3"></i>
+                        <span class="text-sm">1 month free updates</span>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-gray-800">
+                    <div class="text-sm text-gray-300">Optional hosting & maintenance</div>
+                    <div class="text-xl font-bold mt-1">$25<span class="text-gray-300 text-sm">/month</span></div>
+                </div>
+
+                <a href="#demo" class="glow-button block text-center bg-[#00FF88] text-black px-4 py-3 rounded-full font-medium mt-6">
+                    Get Started
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center mt-8 text-sm text-gray-400">
+            Founding client deals available for a limited time. <a href="#demo" class="text-[#00FF88] hover:underline">Book a demo</a> to learn more.
+        </div>
+    </section>
+
     <!-- How It Works Section -->
     <section id="how-it-works" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold">How <span class="gradient-text">SAM</span> Works</h2>
             <p class="mt-4 text-gray-300 max-w-2xl mx-auto">Transform your lead management in just 3 simple steps</p>
         </div>
-        
+                
         <div class="grid md:grid-cols-3 gap-8">
             <!-- Step 1 -->
             <div class="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 transition-all hover:border-[#00FF88]/30">
@@ -149,7 +334,7 @@
                     </div>
                 </div>
             </div>
-            
+                        
             <!-- Step 2 -->
             <div class="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 transition-all hover:border-[#00FF88]/30">
                 <div class="w-16 h-16 bg-[#00FF88]/10 rounded-full flex items-center justify-center mb-6">
@@ -169,7 +354,7 @@
                     </div>
                 </div>
             </div>
-            
+                        
             <!-- Step 3 -->
             <div class="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 transition-all hover:border-[#00FF88]/30">
                 <div class="w-16 h-16 bg-[#00FF88]/10 rounded-full flex items-center justify-center mb-6">
@@ -197,7 +382,7 @@
             <h2 class="text-3xl md:text-4xl font-bold">Powerful <span class="gradient-text">Features</span></h2>
             <p class="mt-4 text-gray-300 max-w-2xl mx-auto">Everything you need to never miss a lead again</p>
         </div>
-        
+                
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Feature 1 -->
             <div class="feature-card bg-gray-900/50 border border-gray-800 rounded-2xl p-6 transition-all duration-300">
@@ -207,7 +392,7 @@
                 <h3 class="text-lg font-bold mb-2">Instant replies 24/7</h3>
                 <p class="text-gray-300 text-sm">No more waiting - SAM responds to leads within seconds, day or night.</p>
             </div>
-            
+                        
             <!-- Feature 2 -->
             <div class="feature-card bg-gray-900/50 border border-gray-800 rounded-2xl p-6 transition-all duration-300">
                 <div class="w-12 h-12 bg-[#00FF88]/10 rounded-lg flex items-center justify-center mb-4">
@@ -216,7 +401,7 @@
                 <h3 class="text-lg font-bold mb-2">Appointment booking</h3>
                 <p class="text-gray-300 text-sm">Seamlessly book inspections that sync with your calendar automatically.</p>
             </div>
-            
+                        
             <!-- Feature 3 -->
             <div class="feature-card bg-gray-900/50 border border-gray-800 rounded-2xl p-6 transition-all duration-300">
                 <div class="w-12 h-12 bg-[#00FF88]/10 rounded-lg flex items-center justify-center mb-4">
@@ -225,7 +410,7 @@
                 <h3 class="text-lg font-bold mb-2">Objection handling</h3>
                 <p class="text-gray-300 text-sm">Trained to overcome common objections and keep leads engaged.</p>
             </div>
-            
+                        
             <!-- Feature 4 -->
             <div class="feature-card bg-gray-900/50 border border-gray-800 rounded-2xl p-6 transition-all duration-300">
                 <div class="w-12 h-12 bg-[#00FF88]/10 rounded-lg flex items-center justify-center mb-4">
@@ -234,7 +419,7 @@
                 <h3 class="text-lg font-bold mb-2">FAQ answering</h3>
                 <p class="text-gray-300 text-sm">Knows your properties inside out and answers all common questions.</p>
             </div>
-            
+                        
             <!-- Feature 5 -->
             <div class="feature-card bg-gray-900/50 border border-gray-800 rounded-2xl p-6 transition-all duration-300">
                 <div class="w-12 h-12 bg-[#00FF88]/10 rounded-lg flex items-center justify-center mb-4">
@@ -243,7 +428,7 @@
                 <h3 class="text-lg font-bold mb-2">CRM tagging</h3>
                 <p class="text-gray-300 text-sm">Coming soon: Automatic lead qualification and CRM organization.</p>
             </div>
-            
+                        
             <!-- Feature 6 -->
             <div class="feature-card bg-gray-900/50 border border-gray-800 rounded-2xl p-6 transition-all duration-300">
                 <div class="w-12 h-12 bg-[#00FF88]/10 rounded-lg flex items-center justify-center mb-4">
@@ -267,81 +452,6 @@
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold">Simple Pricing That <span class="gradient-text">Pays for Itself</span></h2>
-            <p class="mt-4 text-gray-300 max-w-2xl mx-auto">One-time setup with optional ongoing support</p>
-        </div>
-        
-        <div class="max-w-3xl mx-auto">
-            <div class="relative">
-                <div class="absolute -top-4 right-0">
-                    <div class="bg-[#00FF88] text-black text-xs font-bold px-3 py-1 rounded-full">
-                        🚀 Launch Discount Active – Save $500 this week
-                    </div>
-                </div>
-                
-                <div class="bg-gray-900 border-2 border-[#00FF88]/30 rounded-2xl p-8">
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                        <div>
-                            <h3 class="text-2xl font-bold">SAM AI Receptionist</h3>
-                            <p class="text-gray-300 mt-2">Complete setup for your real estate business</p>
-                        </div>
-                        <div class="mt-4 md:mt-0 text-right">
-                            <div class="text-4xl font-bold">$2,999</div>
-                            <div class="text-gray-300 text-sm">one-time setup</div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8 pt-8 border-t border-gray-800">
-                        <h4 class="font-bold text-lg mb-4">Includes:</h4>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-[#00FF88] mt-1 mr-3"></i>
-                                <span>Custom AI assistant setup across all your channels</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-[#00FF88] mt-1 mr-3"></i>
-                                <span>Training with your property portfolio and FAQs</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-[#00FF88] mt-1 mr-3"></i>
-                                <span>Calendar integration for inspection bookings</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-[#00FF88] mt-1 mr-3"></i>
-                                <span>Launch within 3 business days</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-[#00FF88] mt-1 mr-3"></i>
-                                <span>1 month of free support</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="mt-8 pt-6 border-t border-gray-800">
-                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                            <div>
-                                <h4 class="font-bold">Ongoing Support</h4>
-                                <p class="text-gray-300 text-sm">Optional after first month</p>
-                            </div>
-                            <div class="mt-2 md:mt-0">
-                                <span class="text-xl font-bold">$199</span>
-                                <span class="text-gray-300">/month</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-10">
-                        <a href="#demo" class="glow-button block text-center bg-[#00FF88] text-black px-6 py-4 rounded-full font-bold">
-                            Book Your Demo Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- CTA Section -->
     <section id="demo" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-black/30 rounded-3xl border border-gray-800 my-10">
@@ -365,7 +475,7 @@
                     <span class="text-2xl font-bold gradient-text">AiVoiceHub</span>
                     <p class="text-gray-400 mt-2">Your AI Receptionist for Real Estate</p>
                 </div>
-                
+                                
                 <div class="flex flex-col items-center md:items-end space-y-4">
                     <a href="mailto:hello@aivoicehub.co" class="text-gray-300 hover:text-white transition">hello@aivoicehub.co</a>
                     <div class="flex space-x-4">
@@ -378,7 +488,7 @@
                     </div>
                 </div>
             </div>
-            
+                        
             <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-500 text-sm">© 2023 AiVoiceHub. All rights reserved.</p>
                 <div class="mt-4 md:mt-0 flex space-x-6">
@@ -394,7 +504,7 @@
         <button id="chat-toggle" class="chat-bubble bg-[#00FF88] text-black w-14 h-14 rounded-full flex items-center justify-center shadow-lg">
             <i class="fas fa-comment-dots text-xl"></i>
         </button>
-        
+                
         <div id="chat-window" class="hidden absolute bottom-20 right-0 w-80 bg-gray-900 border border-gray-800 rounded-xl overflow-hidden shadow-xl">
             <div class="bg-gray-800 px-4 py-3 flex items-center justify-between">
                 <div class="flex items-center">
@@ -446,16 +556,16 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+                                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
+                                
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     targetElement.scrollIntoView({
                         behavior: 'smooth'
                     });
-                    
+                                        
                     // Close mobile menu if open
                     const mobileMenu = document.getElementById('mobile-menu');
                     if (!mobileMenu.classList.contains('hidden')) {
@@ -467,7 +577,9 @@
 
         // Add animation to feature cards on scroll
         const featureCards = document.querySelectorAll('.feature-card');
-        
+        const serviceCards = document.querySelectorAll('.service-card');
+        const pricingCards = document.querySelectorAll('.pricing-card');
+                
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -482,5 +594,14 @@
         featureCards.forEach(card => {
             observer.observe(card);
         });
+
+        serviceCards.forEach(card => {
+            observer.observe(card);
+        });
+
+        pricingCards.forEach(card => {
+            observer.observe(card);
+        });
     </script>
+</body>
 </html>
