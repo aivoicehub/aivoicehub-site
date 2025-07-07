@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AiVoiceHub | AI Receptionist for Real Estate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #00FF88, #00B4FF, #00FF88);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: gradient 3s linear infinite;
+        }
+        
+        .glow-button {
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .glow-button:hover {
+            box-shadow: 0 0 25px rgba(0, 255, 136, 0.8);
+            transform: translateY(-2px);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.15);
+        }
+        
+        .chat-bubble {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7); }
+            70% { box-shadow: 0 0 0 12px rgba(0, 255, 136, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); }
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+        }
+        
+        .bg-grid {
+            background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-grid">
+    <!-- Navigation -->
+    <nav class="bg-black/80 backdrop-blur-md fixed w-full z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold gradient-text">AiVoiceHub</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#how-it-works" class="text-gray-300 hover:text-white transition">How It Works</a>
+                    <a href="#features" class="text-gray-300 hover:text-white transition">Features</a>
+                    <a href="#pricing" class="text-gray-300 hover:text-white transition">Pricing</a>
+                    <a href="#demo" class="glow-button bg-[#00FF88] text-black px-6 py-2 rounded-full font-medium">Book a Demo</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/90 backdrop-blur-lg pb-4 px-4 border-t border-gray-800">
+            <div class="flex flex-col space-y-3 pt-2">
+                <a href="#how-it-works" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition">How It Works</a>
+                <a href="#features" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition">Features</a>
+                <a href="#pricing" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition">Pricing</a>
+                <a href="#demo" class="glow-button bg-[#00FF88] text-black px-4 py-2 rounded-full font-medium text-center">Book a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center">
+            <span class="inline-block bg-[#00FF88]/10 text-[#00FF88] px-3 py-1 rounded-full text-sm font-medium mb-4">⚡️ Spots Limited – Founder Pricing Live Now</span>
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight max-w-4xl mx-auto">
+                Your AI Receptionist for Real Estate – <span class="gradient-text">Replies. Books. Closes.</span>
+            </h1>
+            <p class="mt-6 text-xl text-gray-300 max-w-2xl mx-auto">
+                Meet SAM – the AI that replies to every DM instantly, books appointments, and never misses a lead again.
+            </p>
+            <div class="mt-10">
+                <a href="#demo" class="glow-button inline-block bg-[#00FF88] text-black px-8 py-4 rounded-full font-bold text-lg">
+                    Book a Demo →
+                </a>
+            </div>
+            <div class="mt-16 relative">
+                <div class="absolute inset-0 bg-[#00FF88]/20 rounded-3xl blur-3xl opacity-20 -z-10"></div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-2xl p-1 inline-block">
+                    <img src="https://placehold.co/800x500/0a0a0a/00ff88/png?text=AiVoiceHub+Dashboard" alt="SAM Dashboard" class="rounded-xl w-full max-w-4xl mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold">How <span class="gradient-text">SAM</span> Works</h2>
+            <p class="mt-4 text-gray-300 max-w-2xl mx-auto">Transform your lead management in just 3 simple steps</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Step 1 -->
+            <div class="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 transition-all hover:border-[#00FF88]/30">
+                <div class="w-16 h-16 bg-[#00FF88]/10 rounded-full flex items-center justify-center mb-6">
+                    <span class="text-3xl text-[#00FF88]">1</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Installation</h3>
+                <p class="text-gray-300">We install your AI assistant across Instagram, Facebook, and your website.</p>
+                <div class="mt-6">
+                    <div class="flex space-x-3">
+                        <div class="bg-gray-800 p-3 rounded-lg">
+                            <i class="fab fa-instagram text-[#00FF88] text-xl"></i>
+                        </div>
+                        <div class="bg-gray-800 p-3 rounded-lg">
+                            <i class="fab fa-facebook text-[#00FF88] text-xl"></i>
+                        </div>
+                        <div class="bg-gray-800 p-3 rounded-lg">
+                            <i class="fas fa-globe text-[#00FF88] text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 transition-all hover:border-[#00FF88]/30">
+                <div class="w-16 h-16 bg-[#00FF88]/10 rounded-full flex items-center justify-center mb-6">
+                    <span class="text-3xl text-[#00FF88]">2</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Smart Engagement</h3>
+                <p class="text-gray-300">SAM replies instantly, answers questions, books inspections, or gathers lead info.</p>
+                <div class="mt-6">
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-[#00FF88] w-3 h-3 rounded-full"></div>
+                            <div class="text-sm text-gray-300">Typing...</div>
+                        </div>
+                        <div class="mt-3 text-sm bg-gray-700 p-3 rounded-lg inline-block">
+                            "Hi there! I can book a property inspection for you right now. Which property are you interested in?"
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 transition-all hover:border-[#00FF88]/30">
+                <div class="w-16 h-16 bg-[#00FF88]/10 rounded-full flex items-center justify-center mb-6">
+                    <span class="text-3xl text-[#00FF88]">3</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">More Closed Deals</h3>
+                <p class="text-gray-300">You close more deals – without lifting a finger.</p>
+                <div class="mt-6">
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm font-medium">Inspection Booked!</div>
+                            <div class="text-xs bg-[#00FF88]/20 text-[#00FF88] px-2 py-1 rounded">Confirmed</div>
+                        </div>
+                        <div class="mt-2 text-xs text-gray-300">123 Main St • Tomorrow 2:30 PM</div>
+                        <div class="mt-3 text-xs text-gray-400">Lead added to your CRM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-black/30">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold">Powerful <span class="gradient-text">Features</span></h2>
+            <p class="mt-4 text-gray-300 max-w-2xl mx-auto">Everything you need to never miss a lead again</p>
+        </div>
+        
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Feature 1 -->
+            <div class="feature-card bg-gray-900/50 border border-gray-800 rounded-2xl p-6 transition-all duration-300">
+                <div class="w-12 h-12 bg-[#00FF88]/10 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-bolt text-[#00FF88] text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Instant replies 24/7</h3>
+                <p class="text-gray-300 text-sm">No more waiting - SAM responds to leads within seconds, day or night.</p>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="feature-card bg-gray-900/50 border border-gray-800 rounded-2xl p-6 transition-all duration-300">
+                <div class="w-12 h-12 bg-[#00FF88]/10 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-calendar-alt text-[#00FF88] text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Appointment booking</h3>
+                <p class="text-gray-300 text-sm">Seamlessly book inspections that sync with your calendar automatically.</p>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="feature-card bg-gray-900/50 border border-gray-800 rounded-2xl p-6 transition-all duration-300">
+                <div class="w-12 h-12 bg-[#00FF88]/10 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-robot text-[#00FF88] text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Objection handling</h3>
+                <p class="text-gray-300 text-sm">Trained to overcome common objections and keep leads engaged.</p>
+            </div>
+            
+            <!-- Feature 4 -->
+            <div class="feature-card bg-gray-900/50 border border-gray-800 rounded-2xl p-6 transition-all duration-300">
+                <div class="w-12 h-12 bg-[#00FF88]/10 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-question-circle text-[#00FF88] text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">FAQ answering</h3>
+                <p class="text-gray-300 text-sm">Knows your properties inside out and answers all common questions.</p>
+            </div>
+            
+            <!-- Feature 5 -->
+            <div class="feature-card bg-gray-900/50 border border-gray-800 rounded-2xl p-6 transition-all duration-300">
+                <div class="w-12 h-12 bg-[#00FF88]/10 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-tag text-[#00FF88] text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">CRM tagging</h3>
+                <p class="text-gray-300 text-sm">Coming soon: Automatic lead qualification and CRM organization.</p>
+            </div>
+            
+            <!-- Feature 6 -->
+            <div class="feature-card bg-gray-900/50 border border-gray-800 rounded-2xl p-6 transition-all duration-300">
+                <div class="w-12 h-12 bg-[#00FF88]/10 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-envelope text-[#00FF88] text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Confirmation emails</h3>
+                <p class="text-gray-300 text-sm">Professional follow-ups sent automatically to your clients.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-[#00FF88]/5 border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-block bg-black/50 border border-gray-800 rounded-full px-6 py-3">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-chart-line text-[#00FF88]"></i>
+                    <span class="font-bold">📊 Booked 118 Inspections Last Month for Our Clients</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold">Simple Pricing That <span class="gradient-text">Pays for Itself</span></h2>
+            <p class="mt-4 text-gray-300 max-w-2xl mx-auto">One-time setup with optional ongoing support</p>
+        </div>
+        
+        <div class="max-w-3xl mx-auto">
+            <div class="relative">
+                <div class="absolute -top-4 right-0">
+                    <div class="bg-[#00FF88] text-black text-xs font-bold px-3 py-1 rounded-full">
+                        🚀 Launch Discount Active – Save $500 this week
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900 border-2 border-[#00FF88]/30 rounded-2xl p-8">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold">SAM AI Receptionist</h3>
+                            <p class="text-gray-300 mt-2">Complete setup for your real estate business</p>
+                        </div>
+                        <div class="mt-4 md:mt-0 text-right">
+                            <div class="text-4xl font-bold">$2,999</div>
+                            <div class="text-gray-300 text-sm">one-time setup</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 pt-8 border-t border-gray-800">
+                        <h4 class="font-bold text-lg mb-4">Includes:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-[#00FF88] mt-1 mr-3"></i>
+                                <span>Custom AI assistant setup across all your channels</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-[#00FF88] mt-1 mr-3"></i>
+                                <span>Training with your property portfolio and FAQs</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-[#00FF88] mt-1 mr-3"></i>
+                                <span>Calendar integration for inspection bookings</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-[#00FF88] mt-1 mr-3"></i>
+                                <span>Launch within 3 business days</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-[#00FF88] mt-1 mr-3"></i>
+                                <span>1 month of free support</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-8 pt-6 border-t border-gray-800">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                            <div>
+                                <h4 class="font-bold">Ongoing Support</h4>
+                                <p class="text-gray-300 text-sm">Optional after first month</p>
+                            </div>
+                            <div class="mt-2 md:mt-0">
+                                <span class="text-xl font-bold">$199</span>
+                                <span class="text-gray-300">/month</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <a href="#demo" class="glow-button block text-center bg-[#00FF88] text-black px-6 py-4 rounded-full font-bold">
+                            Book Your Demo Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="demo" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-black/30 rounded-3xl border border-gray-800 my-10">
+        <div class="text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to <span class="gradient-text">Never Miss a Lead</span> Again?</h2>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
+                Book a 15-minute demo to see SAM in action and get your questions answered.
+            </p>
+            <a href="#" class="glow-button inline-block bg-[#00FF88] text-black px-8 py-4 rounded-full font-bold text-lg">
+                Schedule Your Demo →
+            </a>
+            <p class="mt-6 text-gray-400 text-sm">Limited spots available this week</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/80 border-t border-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <span class="text-2xl font-bold gradient-text">AiVoiceHub</span>
+                    <p class="text-gray-400 mt-2">Your AI Receptionist for Real Estate</p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end space-y-4">
+                    <a href="mailto:hello@aivoicehub.co" class="text-gray-300 hover:text-white transition">hello@aivoicehub.co</a>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-[#00FF88] transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-[#00FF88] transition">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">© 2023 AiVoiceHub. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-gray-300 text-sm transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-300 text-sm transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Bubble -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button id="chat-toggle" class="chat-bubble bg-[#00FF88] text-black w-14 h-14 rounded-full flex items-center justify-center shadow-lg">
+            <i class="fas fa-comment-dots text-xl"></i>
+        </button>
+        
+        <div id="chat-window" class="hidden absolute bottom-20 right-0 w-80 bg-gray-900 border border-gray-800 rounded-xl overflow-hidden shadow-xl">
+            <div class="bg-gray-800 px-4 py-3 flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="w-3 h-3 bg-[#00FF88] rounded-full mr-2"></div>
+                    <span class="font-medium">Chat with SAM</span>
+                </div>
+                <button id="chat-close" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-4 h-60 overflow-y-auto">
+                <div class="bg-gray-800 p-3 rounded-lg mb-3">
+                    <div class="text-xs text-gray-400 mb-1">SAM</div>
+                    <div class="text-sm">Hi there! I'm SAM, your AI assistant. How can I help you today?</div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 p-3 bg-gray-800">
+                <div class="flex">
+                    <input type="text" placeholder="Type your message..." class="flex-1 bg-gray-700 text-sm text-white px-3 py-2 rounded-l focus:outline-none">
+                    <button class="bg-[#00FF88] text-black px-3 py-2 rounded-r text-sm font-medium">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Chat bubble toggle
+        const chatToggle = document.getElementById('chat-toggle');
+        const chatWindow = document.getElementById('chat-window');
+        const chatClose = document.getElementById('chat-close');
+
+        chatToggle.addEventListener('click', function() {
+            chatWindow.classList.toggle('hidden');
+        });
+
+        chatClose.addEventListener('click', function() {
+            chatWindow.classList.add('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Add animation to feature cards on scroll
+        const featureCards = document.querySelectorAll('.feature-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        featureCards.forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=Wajeeh12/aivoicehub" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
